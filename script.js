@@ -5,7 +5,7 @@ if (pinCount) {
         randNumber = Math.round(1000 + Math.random() * 9000);
         document.getElementById("generate-num").value = randNumber;
     })
-    
+
     var buttons = document.getElementsByClassName("button");
 
     for (let i = 0; i < buttons.length; i++) {
@@ -49,6 +49,8 @@ if (pinCount) {
             if (userInput == randNumber) {
                 document.getElementById("not-matched").style.display = "none";
                 document.getElementById("matched").style.display = "block";
+                pinCount = 3;
+                document.getElementById("action-left").innerHTML = pinCount + " try left";
             }
             else {
                 pinCount--;
