@@ -15,7 +15,10 @@ if (pinCount) {
         element.addEventListener("click", function () {
             var button = element.innerHTML;
             if (button >= "0" && button <= "9") {
-                if (userInput * 10 <= 9999) {
+                if(userInput==0 && button == "0"){
+                    alert("There won't be a 0 at the beginning of any pattern.");
+                }
+                else if (userInput * 10 <= 9999) {
                     userInput = userInput * 10 + parseFloat(button);
                     document.getElementById("user-input").value = userInput;
                 }
@@ -37,6 +40,7 @@ if (pinCount) {
                 }
             }
         })
+        
     }
 
     document.getElementById("submit-btn").addEventListener("click", function () {
